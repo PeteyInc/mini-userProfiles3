@@ -7,8 +7,9 @@ angular.module('userProfiles').service('mainService', function($http, $q) {
             url: 'http://reqres.in/api/users?page=1'
         }).then(function(response) {
             var parsedResponse = response.data.data;
+            var turtles = ["Leonardo","Michelangelo","Raphael","Donatello"];
             for (var i = 0; i < parsedResponse.length; i++) {
-                parsedResponse[i].first_name = "Ralf";
+                parsedResponse[i].first_name = turtles[i];
             }
             deferred.resolve(parsedResponse);
         });
